@@ -22,6 +22,24 @@ UWP source (baseline) and the WinUI 3 migration of the same scenario:
 |:-:|:-:|
 | ![UWP main view](docs/before-main.png) | ![WinUI 3 main view](docs/after-main.png) |
 
+<!-- BEGIN per-scenario -->
+## Per-scenario UWP -> WinUI 3 comparison
+
+Initial state of each scenario page, original UWP sample on the left and the migrated WinUI 3 build on the right.
+
+### Scenario 1 — Using custom focus visuals
+
+| UWP source | WinUI 3 (migrated) |
+|:-:|:-:|
+| ![UWP — Scenario 1 — Using custom focus visuals](docs/before-scenarios/01_Using_custom_focus_visuals.png) | ![WinUI 3 — Scenario 1 — Using custom focus visuals](docs/after-scenarios/01_Using_custom_focus_visuals.png) |
+
+### Scenario 2 — Applying to custom controls
+
+| UWP source | WinUI 3 (migrated) |
+|:-:|:-:|
+| ![UWP — Scenario 2 — Applying to custom controls](docs/before-scenarios/02_Applying_to_custom_controls.png) | ![WinUI 3 — Scenario 2 — Applying to custom controls](docs/after-scenarios/02_Applying_to_custom_controls.png) |
+<!-- END per-scenario -->
+
 ## Source
 
 - UWP source: `..\..\..\uwp-samples-standalone\Samples\XamlFocusVisuals\cs\`
