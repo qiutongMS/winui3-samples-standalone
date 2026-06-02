@@ -1,0 +1,40 @@
+# Build output
+**/bin/
+**/obj/
+**/AppPackages/
+**/BundleArtifacts/
+**/Generated Files/
+**/x64/
+**/x86/
+**/ARM/
+**/ARM64/
+**/Debug/
+**/Release/
+
+# Visual Studio / Rider
+.vs/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.swp
+
+# NuGet
+packages/
+*.nupkg
+*.snupkg
+project.lock.json
+
+# Signing
+*.pfx
+*.snk
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local backups created during migration experiments
+Samples.bak-*/
+*.bak
+README.md.bak

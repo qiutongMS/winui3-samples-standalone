@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page
+    x:Class="PackageSample.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:PackageSample"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock
+            x:Name="SampleTitle"
+            Grid.Row="0"
+            Margin="16,8,16,8"
+            Style="{StaticResource SubtitleTextBlockStyle}"
+            Text="Package Sample"/>
+
+        <NavigationView
+            x:Name="NavView"
+            Grid.Row="1"
+            IsBackButtonVisible="Collapsed"
+            IsSettingsVisible="False"
+            PaneDisplayMode="Left"
+            SelectionChanged="NavView_SelectionChanged"
+            AutomationProperties.AutomationId="NavView">
+            <Frame x:Name="ScenarioFrame" Margin="12"/>
+        </NavigationView>
+
+        <StackPanel
+            x:Name="StatusPanel"
+            Grid.Row="2"
+            Orientation="Vertical"
+            Margin="0">
+            <TextBlock
+                x:Name="StatusLabel"
+                Margin="16,4,16,4"
+                Text="Status:"
+                Style="{StaticResource CaptionTextBlockStyle}"/>
+            <Border x:Name="StatusBorder" Padding="16,8">
+                <TextBlock
+                    x:Name="StatusBlock"
+                    FontWeight="Bold"
+                    TextWrapping="Wrap"
+                    AutomationProperties.LiveSetting="Assertive"/>
+            </Border>
+        </StackPanel>
+    </Grid>
+</Page>

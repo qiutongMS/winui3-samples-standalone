@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page
+    x:Class="SDKTemplate.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SDKTemplate"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <NavigationView
+        x:Name="NavView"
+        IsBackButtonVisible="Collapsed"
+        IsSettingsVisible="False"
+        PaneDisplayMode="Left"
+        SelectionChanged="NavView_SelectionChanged">
+        <NavigationView.MenuItems>
+            <NavigationViewItem Content="Simplest Adaptive Streaming" Tag="Scenario1" AutomationProperties.AutomationId="NavItem_Scenario1"/>
+            <NavigationViewItem Content="Event Handlers" Tag="Scenario2" AutomationProperties.AutomationId="NavItem_Scenario2"/>
+            <NavigationViewItem Content="Network Request Modification" Tag="Scenario3" AutomationProperties.AutomationId="NavItem_Scenario3"/>
+            <NavigationViewItem Content="Adaptive Streaming Tuning" Tag="Scenario4" AutomationProperties.AutomationId="NavItem_Scenario4"/>
+            <NavigationViewItem Content="Metadata" Tag="Scenario5" AutomationProperties.AutomationId="NavItem_Scenario5"/>
+            <NavigationViewItem Content="Ad Insertion" Tag="Scenario6" AutomationProperties.AutomationId="NavItem_Scenario6"/>
+            <NavigationViewItem Content="Live Seekable Range" Tag="Scenario7" AutomationProperties.AutomationId="NavItem_Scenario7"/>
+        </NavigationView.MenuItems>
+        <Frame x:Name="ScenarioFrame" />
+    </NavigationView>
+</Page>

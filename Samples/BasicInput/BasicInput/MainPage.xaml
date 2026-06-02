@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page
+    x:Class="BasicInput.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:BasicInput"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <NavigationView
+        x:Name="NavView"
+        AutomationProperties.AutomationId="NavView"
+        IsBackButtonVisible="Collapsed"
+        IsSettingsVisible="False"
+        SelectionChanged="NavView_SelectionChanged"
+        Loaded="NavView_Loaded">
+        <NavigationView.MenuItems>
+            <NavigationViewItem Content="Input Events" Tag="BasicInput.Scenario1_InputEvents" AutomationProperties.AutomationId="NavItemInputEvents"/>
+            <NavigationViewItem Content="PointerPoint Properties" Tag="BasicInput.Scenario2_PointerPointProperties" AutomationProperties.AutomationId="NavItemPointerPoint"/>
+            <NavigationViewItem Content="Device Capabilities" Tag="BasicInput.Scenario3_DeviceCapabilities" AutomationProperties.AutomationId="NavItemDeviceCaps"/>
+            <NavigationViewItem Content="XAML Manipulations" Tag="BasicInput.Scenario4_XAMLManipulations" AutomationProperties.AutomationId="NavItemManipulations"/>
+            <NavigationViewItem Content="Gesture Recognizer" Tag="BasicInput.Scenario5_GestureRecognizer" AutomationProperties.AutomationId="NavItemGesture"/>
+        </NavigationView.MenuItems>
+
+        <Frame x:Name="ContentFrame" />
+    </NavigationView>
+</Page>

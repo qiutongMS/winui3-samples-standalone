@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "AdaptiveStreaming (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "AdaptiveStreaming (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

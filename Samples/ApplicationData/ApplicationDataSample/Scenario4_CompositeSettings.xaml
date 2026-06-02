@@ -1,0 +1,19 @@
+<Page x:Class="ApplicationDataSample.Scenario4_CompositeSettings"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d">
+    <ScrollViewer VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="16">
+            <TextBlock TextWrapping="Wrap" Style="{StaticResource BodyTextBlockStyle}">
+                Composite settings are used to group multiple settings. Note that Composite settings may not be nested.
+            </TextBlock>
+            <StackPanel Orientation="Horizontal" Margin="0,16,0,0">
+                <Button x:Name="WriteCompositeSetting" AutomationProperties.AutomationId="WriteCompositeSetting" Content="Write Composite Setting" Margin="0,0,10,0" Click="WriteCompositeSetting_Click"/>
+                <Button x:Name="DeleteCompositeSetting" AutomationProperties.AutomationId="DeleteCompositeSetting" Content="Delete Composite Setting" Margin="0,0,10,0" Click="DeleteCompositeSetting_Click"/>
+            </StackPanel>
+            <TextBlock x:Name="OutputTextBlock" TextWrapping="Wrap" Style="{StaticResource BodyTextBlockStyle}" Margin="0,16,0,0"/>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

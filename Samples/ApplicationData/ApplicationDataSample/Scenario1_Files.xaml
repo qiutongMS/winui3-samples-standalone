@@ -1,0 +1,33 @@
+<Page x:Class="ApplicationDataSample.Scenario1_Files"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d">
+    <ScrollViewer VerticalScrollMode="Auto" VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="16">
+            <TextBlock TextWrapping="Wrap" Style="{StaticResource BodyTextBlockStyle}">
+                Files are ideal for storing large data-sets, databases, or data in a common file-format.
+                Files can exist in either the Local, LocalCache, or Temporary folders.
+            </TextBlock>
+
+            <TextBlock Text="Local" Style="{StaticResource SubtitleTextBlockStyle}" Margin="0,24,0,8" />
+            <StackPanel Orientation="Horizontal" Margin="0,4,0,0">
+                <Button x:Name="IncrementLocal" AutomationProperties.AutomationId="IncrementLocal" Content="Increment Local Counter" Margin="0,0,10,0" Click="Increment_Local_Click"/>
+            </StackPanel>
+            <TextBlock x:Name="LocalOutputTextBlock" TextWrapping="Wrap" Style="{StaticResource BodyTextBlockStyle}" Margin="0,8,0,0"/>
+
+            <TextBlock Text="LocalCache" Style="{StaticResource SubtitleTextBlockStyle}" Margin="0,24,0,8" />
+            <StackPanel Orientation="Horizontal" Margin="0,4,0,0">
+                <Button x:Name="IncrementLocalCache" AutomationProperties.AutomationId="IncrementLocalCache" Content="Increment LocalCache Counter" Margin="0,0,10,0" Click="Increment_LocalCache_Click"/>
+            </StackPanel>
+            <TextBlock x:Name="LocalCacheOutputTextBlock" TextWrapping="Wrap" Style="{StaticResource BodyTextBlockStyle}" Margin="0,8,0,0"/>
+
+            <TextBlock Text="Temporary" Style="{StaticResource SubtitleTextBlockStyle}" Margin="0,24,0,8" />
+            <StackPanel Orientation="Horizontal" Margin="0,4,0,0">
+                <Button x:Name="IncrementTemporary" AutomationProperties.AutomationId="IncrementTemporary" Content="Increment Temporary Counter" Margin="0,0,10,0" Click="Increment_Temporary_Click"/>
+            </StackPanel>
+            <TextBlock x:Name="TemporaryOutputTextBlock" TextWrapping="Wrap" Style="{StaticResource BodyTextBlockStyle}" Margin="0,8,0,0"/>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

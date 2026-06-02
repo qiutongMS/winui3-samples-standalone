@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "AssociationLaunching (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "AssociationLaunching (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

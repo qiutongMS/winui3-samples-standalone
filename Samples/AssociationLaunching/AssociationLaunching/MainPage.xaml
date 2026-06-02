@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page
+    x:Class="AssociationLaunching.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AssociationLaunching">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <NavigationView
+            x:Name="NavView"
+            AutomationProperties.AutomationId="NavView"
+            IsBackButtonVisible="Collapsed"
+            IsSettingsVisible="False"
+            PaneDisplayMode="Left"
+            SelectionChanged="NavView_SelectionChanged">
+            <NavigationView.MenuItems>
+                <NavigationViewItem AutomationProperties.AutomationId="NavItem_LaunchFile" Content="1) Launching a file" Tag="Scenario1" />
+                <NavigationViewItem AutomationProperties.AutomationId="NavItem_LaunchUri" Content="2) Launching a URI" Tag="Scenario2" />
+                <NavigationViewItem AutomationProperties.AutomationId="NavItem_ReceiveFile" Content="3) Receiving a file" Tag="Scenario3" />
+                <NavigationViewItem AutomationProperties.AutomationId="NavItem_ReceiveUri" Content="4) Receiving a URI" Tag="Scenario4" />
+            </NavigationView.MenuItems>
+
+            <Frame x:Name="ScenarioFrame" />
+        </NavigationView>
+
+        <StackPanel x:Name="StatusPanel" Grid.Row="1" Orientation="Vertical">
+            <TextBlock Margin="10,0,0,10" Text="Status:" TextWrapping="Wrap" />
+            <Border x:Name="StatusBorder">
+                <ScrollViewer MaxHeight="200" VerticalScrollBarVisibility="Auto">
+                    <TextBlock
+                        x:Name="StatusBlock"
+                        AutomationProperties.AutomationId="StatusBlock"
+                        AutomationProperties.LiveSetting="Assertive"
+                        FontWeight="Bold"
+                        Margin="10,10,10,20"
+                        TextWrapping="Wrap" />
+                </ScrollViewer>
+            </Border>
+        </StackPanel>
+    </Grid>
+</Page>
