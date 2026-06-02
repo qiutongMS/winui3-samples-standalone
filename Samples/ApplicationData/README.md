@@ -23,16 +23,45 @@ UWP source (baseline) and the WinUI 3 migration of the same scenario:
 | ![UWP main view](docs/before-main.png) | ![WinUI 3 main view](docs/after-main.png) |
 
 <!-- BEGIN per-scenario -->
-## Per-scenario WinUI 3 output
+## Per-scenario UWP -> WinUI 3 comparison
 
-Each scenario page from the migrated WinUI 3 build:
+Initial state of each scenario page, original UWP sample on the left and the migrated WinUI 3 build on the right.
 
-|  |  |
+### Scenario 1 — Files
+
+| UWP source | WinUI 3 (migrated) |
 |:-:|:-:|
-| **Scenario 1 — Scenario1 Files**<br/>![Scenario 1 — Scenario1 Files](docs/after-scenarios/01_Scenario1_Files.png) | **Scenario 2 — Scenario2 Settings**<br/>![Scenario 2 — Scenario2 Settings](docs/after-scenarios/02_Scenario2_Settings.png) |
-| **Scenario 3 — Scenario3 SettingContainer**<br/>![Scenario 3 — Scenario3 SettingContainer](docs/after-scenarios/03_Scenario3_SettingContainer.png) | **Scenario 4 — Scenario4 CompositeSettings**<br/>![Scenario 4 — Scenario4 CompositeSettings](docs/after-scenarios/04_Scenario4_CompositeSettings.png) |
-| **Scenario 6 — Clear**<br/>![Scenario 6 — Clear](docs/after-scenarios/06_Clear.png) | **Scenario 7 — SetVersion**<br/>![Scenario 7 — SetVersion](docs/after-scenarios/07_SetVersion.png) |
+| _(no UWP baseline captured)_ | ![WinUI 3 — Scenario 1 — Files](docs/after-scenarios/01_Scenario1_Files.png) |
 
+### Scenario 2 — Settings
+
+| UWP source | WinUI 3 (migrated) |
+|:-:|:-:|
+| _(no UWP baseline captured)_ | ![WinUI 3 — Scenario 2 — Settings](docs/after-scenarios/02_Scenario2_Settings.png) |
+
+### Scenario 3 — SettingContainer
+
+| UWP source | WinUI 3 (migrated) |
+|:-:|:-:|
+| _(no UWP baseline captured)_ | ![WinUI 3 — Scenario 3 — SettingContainer](docs/after-scenarios/03_Scenario3_SettingContainer.png) |
+
+### Scenario 4 — CompositeSettings
+
+| UWP source | WinUI 3 (migrated) |
+|:-:|:-:|
+| _(no UWP baseline captured)_ | ![WinUI 3 — Scenario 4 — CompositeSettings](docs/after-scenarios/04_Scenario4_CompositeSettings.png) |
+
+### Scenario 6 — Clear
+
+| UWP source | WinUI 3 (migrated) |
+|:-:|:-:|
+| ![UWP — Scenario 6 — Clear](docs/before-scenarios/06_Clear.png) | ![WinUI 3 — Scenario 6 — Clear](docs/after-scenarios/06_Clear.png) |
+
+### Scenario 7 — SetVersion
+
+| UWP source | WinUI 3 (migrated) |
+|:-:|:-:|
+| ![UWP — Scenario 7 — SetVersion](docs/before-scenarios/07_SetVersion.png) | ![WinUI 3 — Scenario 7 — SetVersion](docs/after-scenarios/07_SetVersion.png) |
 <!-- END per-scenario -->
 
 ## Source
@@ -40,3 +69,5 @@ Each scenario page from the migrated WinUI 3 build:
 - UWP source: `..\..\..\uwp-samples-standalone\Samples\ApplicationData\cs\`
 - Migrated by: Claude Opus 4.6 + the `winui-uwp-migration` skill (run16)
 - Project file: `ApplicationDataSample\ApplicationDataSample.csproj`
+
+

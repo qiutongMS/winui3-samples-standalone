@@ -23,15 +23,27 @@ UWP source (baseline) and the WinUI 3 migration of the same scenario:
 | ![UWP main view](docs/before-main.png) | ![WinUI 3 main view](docs/after-main.png) |
 
 <!-- BEGIN per-scenario -->
-## Per-scenario WinUI 3 output
+## Per-scenario UWP -> WinUI 3 comparison
 
-Each scenario page from the migrated WinUI 3 build:
+Initial state of each scenario page, original UWP sample on the left and the migrated WinUI 3 build on the right.
 
-|  |  |
+### Scenario 1 — Locate Record Specific Profile
+
+| UWP source | WinUI 3 (migrated) |
 |:-:|:-:|
-| **Scenario 1 — Locate Record Specific Profile**<br/>![Scenario 1 — Locate Record Specific Profile](docs/after-scenarios/01_Locate_Record_Specific_Profile.png) | **Scenario 2 — Query Profile for Concurrency**<br/>![Scenario 2 — Query Profile for Concurrency](docs/after-scenarios/02_Query_Profile_for_Concurrency.png) |
-| **Scenario 3 — Query Profile for HDR Support**<br/>![Scenario 3 — Query Profile for HDR Support](docs/after-scenarios/03_Query_Profile_for_HDR_Support.png) |  |
+| ![UWP — Scenario 1 — Locate Record Specific Profile](docs/before-scenarios/01_Locate_Record_Specific_Profile.png) | ![WinUI 3 — Scenario 1 — Locate Record Specific Profile](docs/after-scenarios/01_Locate_Record_Specific_Profile.png) |
 
+### Scenario 2 — Query Profile for Concurrency
+
+| UWP source | WinUI 3 (migrated) |
+|:-:|:-:|
+| ![UWP — Scenario 2 — Query Profile for Concurrency](docs/before-scenarios/02_Query_Profile_for_Concurrency.png) | ![WinUI 3 — Scenario 2 — Query Profile for Concurrency](docs/after-scenarios/02_Query_Profile_for_Concurrency.png) |
+
+### Scenario 3 — Query Profile for HDR Support
+
+| UWP source | WinUI 3 (migrated) |
+|:-:|:-:|
+| ![UWP — Scenario 3 — Query Profile for HDR Support](docs/before-scenarios/03_Query_Profile_for_HDR_Support.png) | ![WinUI 3 — Scenario 3 — Query Profile for HDR Support](docs/after-scenarios/03_Query_Profile_for_HDR_Support.png) |
 <!-- END per-scenario -->
 
 ## Source
@@ -39,3 +51,5 @@ Each scenario page from the migrated WinUI 3 build:
 - UWP source: `..\..\..\uwp-samples-standalone\Samples\CameraProfile\cs\`
 - Migrated by: Claude Opus 4.6 + the `winui-uwp-migration` skill (run16)
 - Project file: `CameraProfile\CameraProfile.csproj`
+
+

@@ -25,15 +25,27 @@ UWP source (baseline) and the WinUI 3 migration of the same scenario:
 | ![UWP main view](docs/before-main.png) | ![WinUI 3 main view](docs/after-main.png) |
 
 <!-- BEGIN per-scenario -->
-## Per-scenario WinUI 3 output
+## Per-scenario UWP -> WinUI 3 comparison
 
-Each scenario page from the migrated WinUI 3 build:
+Initial state of each scenario page, original UWP sample on the left and the migrated WinUI 3 build on the right.
 
-|  |  |
+### Scenario 1 — identity
+
+| UWP source | WinUI 3 (migrated) |
 |:-:|:-:|
-| **Scenario 1 — scenario1 identity**<br/>![Scenario 1 — scenario1 identity](docs/after-scenarios/01_scenario1_identity.png) | **Scenario 2 — scenario2 installedlocation**<br/>![Scenario 2 — scenario2 installedlocation](docs/after-scenarios/02_scenario2_installedlocation.png) |
-| **Scenario 3 — scenario3 dependencies**<br/>![Scenario 3 — scenario3 dependencies](docs/after-scenarios/03_scenario3_dependencies.png) |  |
+| ![UWP — Scenario 1 — identity](docs/before-scenarios/01_scenario1_identity.png) | ![WinUI 3 — Scenario 1 — identity](docs/after-scenarios/01_scenario1_identity.png) |
 
+### Scenario 2 — installedlocation
+
+| UWP source | WinUI 3 (migrated) |
+|:-:|:-:|
+| ![UWP — Scenario 2 — installedlocation](docs/before-scenarios/02_scenario2_installedlocation.png) | ![WinUI 3 — Scenario 2 — installedlocation](docs/after-scenarios/02_scenario2_installedlocation.png) |
+
+### Scenario 3 — dependencies
+
+| UWP source | WinUI 3 (migrated) |
+|:-:|:-:|
+| ![UWP — Scenario 3 — dependencies](docs/before-scenarios/03_scenario3_dependencies.png) | ![WinUI 3 — Scenario 3 — dependencies](docs/after-scenarios/03_scenario3_dependencies.png) |
 <!-- END per-scenario -->
 
 ## Source
@@ -41,4 +53,6 @@ Each scenario page from the migrated WinUI 3 build:
 - UWP source: `..\..\..\uwp-samples-standalone\Samples\Package\cs\`
 - Migrated by: Claude Opus 4.6 + the `winui-uwp-migration` skill (run9)
 - Project file: `PackageSample\PackageSample.csproj`
+
+
 
