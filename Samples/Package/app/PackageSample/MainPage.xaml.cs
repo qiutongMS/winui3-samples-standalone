@@ -1,48 +1,29 @@
+using System;
+using System.Collections.Generic;
 using Microsoft.UI;
 using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Automation.Peers;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 
-namespace PackageSample;
+namespace SDKTemplate;
 
-/// <summary>
-/// Main navigation page that hosts scenario pages in a Frame.
-/// </summary>
 public sealed partial class MainPage : Page
 {
-    public static MainPage? Current;
+    public static MainPage Current { get; private set; } = null!;
 
     public MainPage()
     {
         InitializeComponent();
         Current = this;
-        SampleTitle.Text = FEATURE_NAME;
     }
 
     protected override void OnNavigatedTo(NavigationEventArgs e)
     {
-        var menuItems = new List<NavigationViewItem>();
-        int i = 1;
-        foreach (Scenario s in scenarios)
+        base.OnNavigatedTo(e);
+        if (NavView.MenuItems.Count > 0)
         {
-            menuItems.Add(new NavigationViewItem
-            {
-                Content = $"{i++}) {s.Title}",
-                Tag = s.ClassType
-            });
-        }
-
-        NavView.MenuItems.Clear();
-        foreach (var item in menuItems)
-        {
-            NavView.MenuItems.Add(item);
-        }
-
-        if (menuItems.Count > 0)
-        {
-            NavView.SelectedItem = menuItems[0];
+            NavView.SelectedItem = NavView.MenuItems[0];
         }
     }
 
@@ -50,18 +31,16 @@ public sealed partial class MainPage : Page
     {
         NotifyUser(string.Empty, NotifyType.StatusMessage);
 
-        if (args.SelectedItem is NavigationViewItem item && item.Tag is Type pageType)
+        if (args.SelectedItem is NavigationViewItem item && item.Tag is string tag)
         {
-            ScenarioFrame.Navigate(pageType);
+            Type? pageType = Type.GetType(tag);
+            if (pageType != null)
+            {
+                ScenarioFrame.Navigate(pageType);
+            }
         }
     }
 
-    public List<Scenario> Scenarios => scenarios;
-
-    /// <summary>
-    /// Display a message to the user.
-    /// This method may be called from any thread.
-    /// </summary>
     public void NotifyUser(string strMessage, NotifyType type)
     {
         if (DispatcherQueue.HasThreadAccess)
@@ -88,11 +67,8 @@ public sealed partial class MainPage : Page
 
         StatusBlock.Text = strMessage;
 
-        StatusBorder.Visibility = (StatusBlock.Text != string.Empty) ? Visibility.Visible : Visibility.Collapsed;
-        StatusPanel.Visibility = (StatusBlock.Text != string.Empty) ? Visibility.Visible : Visibility.Collapsed;
-
-        var peer = FrameworkElementAutomationPeer.FromElement(StatusBlock);
-        peer?.RaiseAutomationEvent(AutomationEvents.LiveRegionChanged);
+        StatusBorder.Visibility = string.IsNullOrEmpty(strMessage) ? Visibility.Collapsed : Visibility.Visible;
+        StatusPanel.Visibility = string.IsNullOrEmpty(strMessage) ? Visibility.Collapsed : Visibility.Visible;
     }
 }
 

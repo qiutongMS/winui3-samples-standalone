@@ -1,26 +1,12 @@
-//*********************************************************
-//
-// Copyright (c) Microsoft. All rights reserved.
-// THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
-// ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
-// IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
-// PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
-//
-//*********************************************************
-
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
+using System;
 using Windows.ApplicationModel;
 
-namespace PackageSample;
+namespace SDKTemplate;
 
-/// <summary>
-/// Scenario page showing the current app package identity.
-/// </summary>
 public sealed partial class Scenario1 : Page
 {
-    private readonly MainPage? _rootPage = MainPage.Current;
-
     public Scenario1()
     {
         InitializeComponent();
@@ -49,22 +35,38 @@ public sealed partial class Scenario1 : Page
         Package package = Package.Current;
         PackageId packageId = package.Id;
 
-        string output = $"Name: \"{packageId.Name}\"\n" +
-                        $"Version: {VersionString(packageId.Version)}\n" +
-                        $"Architecture: {ArchitectureString(packageId.Architecture)}\n" +
-                        $"ResourceId: \"{packageId.ResourceId}\"\n" +
-                        $"Publisher: \"{packageId.Publisher}\"\n" +
-                        $"PublisherId: \"{packageId.PublisherId}\"\n" +
-                        $"FullName: \"{packageId.FullName}\"\n" +
-                        $"FamilyName: \"{packageId.FamilyName}\"\n" +
-                        $"IsFramework: {package.IsFramework}\n" +
-                        $"IsResourcePackage: {package.IsResourcePackage}\n" +
-                        $"IsBundle: {package.IsBundle}\n" +
-                        $"IsDevelopmentMode: {package.IsDevelopmentMode}\n" +
-                        $"DisplayName: \"{package.DisplayName}\"\n" +
-                        $"PublisherDisplayName: \"{package.PublisherDisplayName}\"\n" +
-                        $"Description: \"{package.Description}\"\n" +
-                        $"Logo: \"{package.Logo.AbsoluteUri}\"\n";
+        string output = string.Format("Name: \"{0}\"\n" +
+                                      "Version: {1}\n" +
+                                      "Architecture: {2}\n" +
+                                      "ResourceId: \"{3}\"\n" +
+                                      "Publisher: \"{4}\"\n" +
+                                      "PublisherId: \"{5}\"\n" +
+                                      "FullName: \"{6}\"\n" +
+                                      "FamilyName: \"{7}\"\n" +
+                                      "IsFramework: {8}\n" +
+                                      "IsResourcePackage: {9}\n" +
+                                      "IsBundle: {10}\n" +
+                                      "IsDevelopmentMode: {11}\n" +
+                                      "DisplayName: \"{12}\"\n" +
+                                      "PublisherDisplayName: \"{13}\"\n" +
+                                      "Description: \"{14}\"\n" +
+                                      "Logo: \"{15}\"\n",
+                                      packageId.Name,
+                                      VersionString(packageId.Version),
+                                      ArchitectureString(packageId.Architecture),
+                                      packageId.ResourceId,
+                                      packageId.Publisher,
+                                      packageId.PublisherId,
+                                      packageId.FullName,
+                                      packageId.FamilyName,
+                                      package.IsFramework,
+                                      package.IsResourcePackage,
+                                      package.IsBundle,
+                                      package.IsDevelopmentMode,
+                                      package.DisplayName,
+                                      package.PublisherDisplayName,
+                                      package.Description,
+                                      package.Logo.AbsoluteUri);
 
         OutputTextBlock.Text = output;
     }

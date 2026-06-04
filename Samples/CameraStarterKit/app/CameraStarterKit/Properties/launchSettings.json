@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CameraStarterKit (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "CameraStarterKit (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

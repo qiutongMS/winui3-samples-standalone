@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 //*********************************************************
 //
 // Copyright (c) Microsoft. All rights reserved.
@@ -9,31 +9,24 @@
 //
 //*********************************************************
 -->
-<Page x:Class="PackageSample.Scenario2"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      mc:Ignorable="d">
-    <Grid x:Name="LayoutRoot" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="16">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Grid x:Name="Input" Grid.Row="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <TextBlock TextWrapping="Wrap" Grid.Row="0" Style="{StaticResource BodyTextBlockStyle}" HorizontalAlignment="Left"
-                       Text="Use the Package API to access the current package's installed location."/>
-            <StackPanel Orientation="Horizontal" Margin="0,10,0,0" Grid.Row="1">
-                <Button x:Name="GetInstalledLocation" Content="Get Installed Location" Margin="0,0,10,0" Click="GetInstalledLocation_Click"
-                        AutomationProperties.AutomationId="GetInstalledLocationButton"/>
-            </StackPanel>
-        </Grid>
-        <Grid x:Name="Output" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Margin="0,16,0,0">
-            <TextBlock x:Name="OutputTextBlock" Text="" TextWrapping="Wrap" Style="{StaticResource BodyTextBlockStyle}" HorizontalAlignment="Left"/>
-        </Grid>
+<Page x:Class="SDKTemplate.Scenario2" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+  <Grid x:Name="LayoutRoot" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="24">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <Grid x:Name="Input" Grid.Row="0">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+      <TextBlock TextWrapping="Wrap" Grid.Row="0" Style="{ThemeResource BodyTextBlockStyle}" HorizontalAlignment="Left">Use the Package API to access the current package's installed location.</TextBlock>
+      <StackPanel Orientation="Horizontal" Margin="0,12,0,0" Grid.Row="1">
+        <Button x:Name="GetInstalledLocation" AutomationProperties.AutomationId="GetInstalledLocationButton" Content="Get Installed Location" Margin="0,0,10,0" Click="GetInstalledLocation_Click"/>
+      </StackPanel>
     </Grid>
+    <Grid x:Name="Output" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Margin="0,16,0,0">
+      <TextBlock x:Name="OutputTextBlock" Text="" TextWrapping="Wrap" Style="{ThemeResource BodyTextBlockStyle}" HorizontalAlignment="Left"/>
+    </Grid>
+  </Grid>
 </Page>

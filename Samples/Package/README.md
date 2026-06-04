@@ -6,9 +6,7 @@
 |:-:|:-:|:-:|:-:|
 | 9 / 10 | 9 / 10 | 8 / 10 | 10 / 10 |
 
-Read app package identity, version, dependencies, and signature info via
-`Windows.ApplicationModel.Package`. Three scenario pages: Identity,
-Installed Location, and Dependencies.
+Read app package identity, version, dependencies, and signature info via `Windows.ApplicationModel.Package`. Three scenario pages: Identity, Installed Location, and Dependencies.
 
 ## Run
 
@@ -51,8 +49,6 @@ Initial state of each scenario page, original UWP sample on the left and the mig
 ## Source
 
 - UWP source: `..\..\..\uwp-samples-standalone\Samples\Package\cs\`
-- Migrated by: Claude Opus 4.6 + the `winui-uwp-migration` skill (run9)
+- Migrated by: Claude Opus 4.6 + the `winui-uwp-migration` skill (run32)
 - Project file: `PackageSample\PackageSample.csproj`
-
-
 

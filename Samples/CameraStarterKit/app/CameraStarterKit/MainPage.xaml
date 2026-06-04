@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page
+    x:Class="CameraStarterKit.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:CameraStarterKit"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <SolidColorBrush x:Key="TranslucentBlackBrush" Color="Black" Opacity="0.3"/>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <!-- Camera preview -->
+        <MediaPlayerElement
+            x:Name="PreviewControl"
+            AutomationProperties.AutomationId="PreviewControl"
+            Stretch="Uniform"
+            AreTransportControlsEnabled="False"/>
+
+        <!-- Fallback message when camera is not available -->
+        <StackPanel
+            x:Name="ErrorPanel"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Visibility="Collapsed">
+            <TextBlock
+                x:Name="ErrorIcon"
+                HorizontalAlignment="Center"
+                FontSize="48"
+                Text="&#xE714;"
+                FontFamily="{ThemeResource SymbolThemeFontFamily}" />
+            <TextBlock
+                x:Name="ErrorMessageText"
+                HorizontalAlignment="Center"
+                Margin="0,12,0,0"
+                Style="{ThemeResource SubtitleTextBlockStyle}"
+                Text="This sample requires a camera device that is not available on this machine."
+                TextWrapping="Wrap"
+                MaxWidth="400"
+                TextAlignment="Center" />
+            <TextBlock
+                x:Name="ErrorDetailText"
+                HorizontalAlignment="Center"
+                Margin="0,8,0,0"
+                Style="{ThemeResource CaptionTextBlockStyle}"
+                Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                TextWrapping="Wrap"
+                MaxWidth="400"
+                TextAlignment="Center" />
+        </StackPanel>
+
+        <!-- Capture + Record buttons -->
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center">
+            <StackPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Margin" Value="10,40"/>
+                    <Setter Property="MinWidth" Value="80"/>
+                    <Setter Property="MinHeight" Value="80"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="Background" Value="{StaticResource TranslucentBlackBrush}"/>
+                    <Setter Property="BorderBrush" Value="White"/>
+                    <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+                </Style>
+            </StackPanel.Resources>
+
+            <Button
+                x:Name="PhotoButton"
+                AutomationProperties.AutomationId="PhotoButton"
+                Click="PhotoButton_Click"
+                IsEnabled="False">
+                <Viewbox MaxHeight="40" MaxWidth="40">
+                    <SymbolIcon Symbol="Camera"/>
+                </Viewbox>
+            </Button>
+
+            <Button
+                x:Name="VideoButton"
+                AutomationProperties.AutomationId="VideoButton"
+                Click="VideoButton_Click"
+                IsEnabled="False">
+                <Grid>
+                    <Ellipse x:Name="StartRecordingIcon" Fill="Red" Width="20" Height="20"/>
+                    <Rectangle x:Name="StopRecordingIcon" Fill="White" Width="20" Height="20" Visibility="Collapsed"/>
+                </Grid>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Page>
