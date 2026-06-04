@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CameraAdvancedCapture (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "CameraAdvancedCapture (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

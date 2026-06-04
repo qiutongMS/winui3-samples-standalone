@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page
+    x:Class="CameraFrames.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:CameraFrames"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <NavigationView x:Name="NavView"
+                    AutomationProperties.AutomationId="NavView"
+                    IsBackButtonVisible="Collapsed"
+                    IsSettingsVisible="False"
+                    SelectionChanged="NavView_SelectionChanged"
+                    PaneDisplayMode="Left">
+        <NavigationView.MenuItems>
+            <NavigationViewItem Content="Display Depth/Color/IR"
+                                AutomationProperties.AutomationId="Scenario1NavItem"
+                                Tag="Scenario1"/>
+            <NavigationViewItem Content="Find Available Sources"
+                                AutomationProperties.AutomationId="Scenario2NavItem"
+                                Tag="Scenario2"/>
+        </NavigationView.MenuItems>
+        <Frame x:Name="ScenarioFrame" />
+    </NavigationView>
+</Page>

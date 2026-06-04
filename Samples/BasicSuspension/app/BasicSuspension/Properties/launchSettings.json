@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "BasicSuspension (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "BasicSuspension (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

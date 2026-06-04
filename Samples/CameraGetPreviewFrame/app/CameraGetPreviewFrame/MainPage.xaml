@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page
+    x:Class="CameraGetPreviewFrame.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:CameraGetPreviewFrame"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <!--Camera preview (rendered via frame grabbing since CaptureElement is unavailable in WinUI 3)-->
+            <Image
+                x:Name="PreviewImage"
+                AutomationProperties.AutomationId="PreviewImage"
+                Grid.Column="0"
+                Stretch="Uniform" />
+
+            <!--Captured preview frame image-->
+            <Image
+                x:Name="PreviewFrameImage"
+                AutomationProperties.AutomationId="PreviewFrameImage"
+                Grid.Column="1" />
+        </Grid>
+
+        <!-- Fallback message when camera is unavailable -->
+        <TextBlock
+            x:Name="NoCameraMessage"
+            Grid.Row="0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            TextAlignment="Center"
+            TextWrapping="Wrap"
+            Visibility="Collapsed"
+            Style="{ThemeResource SubtitleTextBlockStyle}" />
+
+        <!--User input-->
+        <StackPanel Grid.Row="1" Padding="12">
+            <StackPanel Orientation="Horizontal">
+                <Button
+                    x:Name="GetPreviewFrameButton"
+                    AutomationProperties.AutomationId="GetPreviewFrameButton"
+                    Content="GetPreviewFrameAsync"
+                    Click="GetPreviewFrameButton_Click"
+                    Margin="0,0,10,0"
+                    IsEnabled="False" />
+                <TextBlock
+                    x:Name="FrameInfoTextBlock"
+                    AutomationProperties.AutomationId="FrameInfoTextBlock"
+                    VerticalAlignment="Center" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                <CheckBox
+                    x:Name="ShowFrameCheckBox"
+                    AutomationProperties.AutomationId="ShowFrameCheckBox"
+                    Content="Show frame"
+                    Margin="0,0,8,0" />
+                <CheckBox
+                    x:Name="GreenEffectCheckBox"
+                    AutomationProperties.AutomationId="GreenEffectCheckBox"
+                    Content="Green effect"
+                    Margin="0,0,8,0" />
+            </StackPanel>
+            <CheckBox
+                x:Name="SaveFrameCheckBox"
+                AutomationProperties.AutomationId="SaveFrameCheckBox"
+                Content="Save frame"
+                Margin="0,4,0,0" />
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CameraGetPreviewFrame (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "CameraGetPreviewFrame (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

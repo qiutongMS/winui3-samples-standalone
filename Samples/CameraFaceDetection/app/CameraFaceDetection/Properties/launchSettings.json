@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CameraFaceDetection (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "CameraFaceDetection (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
